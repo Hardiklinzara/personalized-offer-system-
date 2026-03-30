@@ -106,20 +106,19 @@ if "cart" not in st.session_state:
 # ─────────────────────────────────────────
 def login():
     st.title("🛒 Smart AI E-Commerce")
-    st.subheader("Login")
-
-    col1, col2 = st.columns(2)
-    with col1:
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        st.markdown("### Login")
         username = st.text_input("Your Name")
-        role     = st.selectbox("Role", ["Customer", "Shop Owner"])
-
-    if role == "Customer":
-        st.markdown("#### 👤 Your Shopping Profile *(helps AI personalise offers)*")
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            age      = st.number_input("Age", 18, 80, 28)
-            
-
+        role     = st.selectbox("I am a", ["Customer", "Shop Owner"])
+        if st.button("Login", use_container_width=True):
+            if not username:
+                st.warning("Please enter your name.")
+                return
+            st.session_state["role"]         = role
+            st.session_state["username"]     = username
+            st.session_state["user_profile"] = DEFAULT_PROFILE.copy()
+            st.rerun()
 # ─────────────────────────────────────────
 # CUSTOMER DASHBOARD
 # ─────────────────────────────────────────
