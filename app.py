@@ -118,49 +118,7 @@ def login():
         c1, c2, c3 = st.columns(3)
         with c1:
             age      = st.number_input("Age", 18, 80, 28)
-            gender   = st.selectbox("Gender", ["Female", "Male"])
-            location = st.selectbox("City", ["Bangalore","Chennai","Delhi",
-                                             "Hyderabad","Kolkata","Mumbai"])
-            season   = st.selectbox("Current Season", ["Summer","Winter","Autumn","Spring"])
-            festival = st.selectbox("Upcoming Festival", ["Diwali","Christmas","Eid",
-                                                          "Holi","NewYear"])
-        with c2:
-            preferred_brand  = st.selectbox("Favourite Brand", ["Nike","Adidas","Zara",
-                                                                 "H&M","Levis","Uniqlo"])
-            color_preference = st.selectbox("Colour Preference", ["Black","Blue","White",
-                                                                   "Red","Green","Beige"])
-            size             = st.selectbox("Size", ["S","M","L","XL"])
-            price_sensitivity= st.selectbox("Price Sensitivity", ["Low","Medium","High"])
-            discount_used    = st.selectbox("Used Discounts Before?", ["Yes","No"])
-        with c3:
-            loyalty_score      = st.slider("Loyalty Score (0–100)", 0.0, 100.0, 60.0)
-            purchase_frequency = st.slider("Purchases / Month", 1, 30, 5)
-            avg_order_value    = st.number_input("Avg Order Value (₹)", 200, 10000, 1200)
-            last_purchase_days = st.number_input("Days Since Last Purchase", 1, 365, 15)
-            browsing_time      = st.slider("Daily Browsing (mins)", 5, 120, 30)
-            product_views      = st.slider("Products Viewed / Week", 1, 50, 10)
-            wishlist_items     = st.slider("Wishlist Items", 0, 20, 4)
-            coupon_usage_rate  = st.slider("Coupon Usage Rate", 0.0, 1.0, 0.5)
-
-    if st.button("Login"):
-        if not username:
-            st.warning("Please enter your name.")
-            return
-        st.session_state["role"]     = role
-        st.session_state["username"] = username
-        if role == "Customer":
-            st.session_state["user_profile"] = {
-                "age": age, "gender": gender, "location": location,
-                "preferred_brand": preferred_brand, "color_preference": color_preference,
-                "size": size, "season": season, "festival": festival,
-                "purchase_frequency": purchase_frequency, "avg_order_value": avg_order_value,
-                "last_purchase_days": last_purchase_days, "browsing_time": browsing_time,
-                "product_views": product_views, "wishlist_items": wishlist_items,
-                "discount_used": discount_used, "coupon_usage_rate": coupon_usage_rate,
-                "price_sensitivity": price_sensitivity, "loyalty_score": loyalty_score,
-                "category": "T-shirt",   # default; overridden per product
-            }
-        st.rerun()
+            ... (all the questions)
 
 
 # ─────────────────────────────────────────
