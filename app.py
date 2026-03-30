@@ -118,8 +118,7 @@ def login():
         c1, c2, c3 = st.columns(3)
         with c1:
             age      = st.number_input("Age", 18, 80, 28)
-            ... (all the questions)
-
+            
 
 # ─────────────────────────────────────────
 # CUSTOMER DASHBOARD
