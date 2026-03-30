@@ -105,20 +105,43 @@ if "cart" not in st.session_state:
 # LOGIN  (now collects profile for ML)
 # ─────────────────────────────────────────
 def login():
-    st.title("🛒 Smart AI E-Commerce")
-    col1, col2, col3 = st.columns([1, 1, 1])
-    with col2:
-        st.markdown("### Login")
-        username = st.text_input("Your Name")
-        role     = st.selectbox("I am a", ["Customer", "Shop Owner"])
-        if st.button("Login", use_container_width=True):
-            if not username:
-                st.warning("Please enter your name.")
-                return
-            st.session_state["role"]         = role
-            st.session_state["username"]     = username
-            st.session_state["user_profile"] = DEFAULT_PROFILE.copy()
+    # Title Section
+    st.markdown(
+        "<h1 style='text-align:center; color:#2E8B57;'>🛍️ Smart AI Personalized Offers</h1>",
+        unsafe_allow_html=True
+    )
+
+    st.markdown(
+        "<p style='text-align:center; color:gray;'>✨ Discover offers tailored just for you using AI</p>",
+        unsafe_allow_html=True
+    )
+
+    st.write("---")
+
+    # Login Section
+    st.subheader("🔐 Login")
+
+    username = st.text_input("👤 Enter your Name")
+
+    role = st.selectbox(
+        "🎯 Select Role",
+        ["Customer 🛒", "Shop Owner 🏪"]
+    )
+
+    st.write("")
+
+    # Button
+    if st.button("🚀 Login"):
+        if username.strip() != "":
+            st.session_state.role = role
+            st.session_state.username = username
+
+            st.success(f"✅ Welcome, {username}! Loading your personalized dashboard...")
+            st.balloons()  # animation
+
             st.rerun()
+        else:
+            st.warning("⚠️ Please enter your name to continue")
 # ─────────────────────────────────────────
 # CUSTOMER DASHBOARD
 # ─────────────────────────────────────────
