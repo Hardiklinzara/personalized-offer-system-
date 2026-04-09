@@ -95,6 +95,9 @@ if "products" not in st.session_state:
         {"id": 3, "name": "Jeans",         "price": 1499,
          "image": "https://images.unsplash.com/photo-1542272604-787c3835535d",
          "category": "Jeans"},
+         {"id": 4, "name": "Iphone 17 pro max",         "price": 150000,
+         "image": "https://imgs.search.brave.com/3etVnF-bOpYvyPyeDy2YCHARgYuhF33X0fu7HUQv9kc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuZGlnaXQuaW4v/SFAtT21uaUJvb2st/My0xNS1mbjAwMDdB/VS1BSS1MYXB0b3At/MS0xLmpwZw",
+         "category": "Jeans"},
     ]
 
 if "cart" not in st.session_state:
