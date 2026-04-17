@@ -290,7 +290,6 @@ def main():
 
         if st.session_state["role"] == "Customer":
             customer_dashboard()
-        else:
-            owner_dashboard()
+
 
 main()
